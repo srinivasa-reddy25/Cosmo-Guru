@@ -1,0 +1,29 @@
+# Environment variables
+.env
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+env/
+.venv/
+venv/
+
+# Firebase credentials
+**/firebase-credentials.json
+
+# IDE specific files
+.vscode/
+.idea/
+
+# OS specific files
+.DS_Store
+
+# Render
+render.yaml
+
+# Temporary files
+*.mp3
+*.wav

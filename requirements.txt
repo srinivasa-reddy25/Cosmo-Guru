@@ -1,0 +1,6 @@
+flask
+flask-cors
+langchain-openai
+google-cloud-firestore
+langchain-google-firestore
+python-dotenv

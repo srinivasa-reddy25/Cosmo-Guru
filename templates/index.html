@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CosmoGuru - Your Telugu Astro Guide</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    <h1>Cosmo Guru</h1>
+                    <span class="subtitle">Your Telugu Guide</span>
+                </div>
+                <div class="session-panel">
+                    <div class="session-row">
+                        <div class="current-session">
+                            <div class="session-label">
+                                <i class="fas fa-circle-dot"></i>
+                                Current Session
+                            </div>
+                            <div class="session-id-box" onclick="copySessionId()" title="Click to copy session ID">
+                                <div class="session-id-mask">Session ID</div>
+                                <code id="current-session" class="hidden">{{ session_id }}</code>
+                                <i class="fas fa-copy copy-icon"></i>
+                            </div>
+                        </div>
+                        <div class="session-divider"></div>
+                        <div class="retrieve-session">
+                            <div class="session-label">
+                                <i class="fas fa-history"></i>
+                                Restore Previous Chat
+                            </div>
+                            <div class="retrieve-input-box">
+                                <input type="text" 
+                                       id="session-input" 
+                                       placeholder="Paste your previous session ID here..."
+                                       aria-label="Previous session ID input">
+                                <button class="retrieve-btn" onclick="loadSession()">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div id="session-loading-overlay" class="session-loading-overlay hidden">
+                <div class="session-loading-content">
+                    <div class="session-loading-animation">
+                        <div class="cosmic-loader">
+                            <div class="stars"></div>
+                            <div class="stars2"></div>
+                            <div class="stars3"></div>
+                        </div>
+                    </div>
+                    <h2>Retrieving Messages</h2>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="loading-status">Loading chat history...</div>
+                </div>
+            </div>
+        </div>
+        <div class="chat-input-container">
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Ask me about Ugadi traditions, astrology, or Telugu culture...">
+                <button id="send-button">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
